@@ -33,7 +33,7 @@ pipeline {
         stage('email test') {
             steps {
                 script {
-                    emailext body: "test",
+                    mail body: "test",
                         subject: "test",
                         to: "oliverforman27@gmail.com"
                 }
