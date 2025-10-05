@@ -18,7 +18,7 @@ pipeline {
             steps {
                 bat 'npm test || exit /b 0' // Allows pipeline to continue despite test failures
                 script {
-                    mail body: "test",
+                    emailext body: "test",
                         subject: "test",
                         to: "oliverforman27@gmail.com"
                 }
