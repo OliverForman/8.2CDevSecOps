@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/OliverForman/8.2CDevSecOps'
+                git branch: 'main', url: 'https://github.com/OliverForman/8.2CDevSecOps'
             }
         }
         stage('Install Dependencies') {
