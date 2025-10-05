@@ -30,5 +30,14 @@ pipeline {
                 bat 'npm audit || exit /b 0' // This will show known CVEs in the output
             }
         }
+        stage('email test') {
+            steps {
+                script {
+                    emailext body: "test",
+                        subject: "test",
+                        to: "oliverforman27@gmail.com"
+                }
+            }
+        }
     }
 }
