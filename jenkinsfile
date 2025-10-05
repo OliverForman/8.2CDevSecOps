@@ -16,18 +16,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                //bat 'npm test || exit /b 0' Allows pipeline to continue despite test failures
-                bat 'echo npm test would occur here but keeps coming up that snyk needs authenticated account || exit /b 0'
-            }
-            post {
-                always {
-                    emailext (
-                        subject: "Jenkins Stage - ${currentBuild.currentResults}",
-                        body: "Run Tests stage has completed with status: ${currentBuild.currentResult}",
-                        to: 'oliverforman27@gmail.com',
-                        compressLog: true
-                    )
-                }
+                bat 'npm test || exit /b 0' // Allows pipeline to continue despite test failures
             }
         }
         stage('Generate Coverage Report') {
